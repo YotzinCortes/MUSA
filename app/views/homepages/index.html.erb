@@ -17,9 +17,18 @@
         <h1 class="cover-heading">Musa lorem ipsum dolor at.</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-default">Learn more</a>
+          <%= form_tag join_homepages_path, method: 'post', class: 'form-inline' do %>
+            <div class="form-group">
+              <label class="sr-only" for="email">Email address</label>
+              <%= text_field_tag :email, '', class: 'form-control input-lg', placeholder: 'Enter email address', size: '40', type: 'email' %>
+            </div>
+            <div class="form-group">
+              <%= submit_tag "Get Early Access", class: 'btn btn-lg btn-default' %>
+            </div>
+          <% end %>
         </p>
       </div>
+
 
       <div class="mastfoot">
         <div class="inner">
